@@ -18,40 +18,40 @@ class Group(BaseGroup):
 class Player(BasePlayer):
 
     age = models.IntegerField(
-        label='你的年龄？',
+        label='What is your age?',
         min=13, max=125)
 
     gender = models.StringField(
-        choices=['男性', '女性', '其它'],
-        label='你的性别？',
+        choices=['Male', 'Female', 'Other'],
+        label='What is your gender?',
         widget=widgets.RadioSelect)
 
     education = models.StringField(
-        choices=['没有任何学校教育','小学','初中','高中',
-        '大学未毕业','职业培训',
-        '大学本科（包括在读）','硕士研究生','博士研究生'],
-        label='你所获得的最高学历是什么？',
+        choices=['No schooling','Primary School','Middle School','High School',
+        'Some College','Trade/Technical/Vocational Training','Associate Degree',
+        'Bachelor\'s Degree','Master\'s Degree','Doctorate'],
+        label='What is your highest level of education attained?',
         widget=widgets.RadioSelect)
 
     language = models.StringField(
-        label='你的母语是什么？',
+        label='What is your native language?',
         widget=widgets.TextInput)
 
     country = models.StringField(
-        label='你在哪个国家出生？',
+        label='In which country were you born?',
         widget=widgets.TextInput)
 
     intent = models.StringField(
-        choices=['自私的','大方的','敌对的','合作的','理性的','不理性的'],
-        label='你如何评价另一位参与者在做选择时的意图？',
+        choices=['Selfish','Generous','Hostile','Cooperative','Rational','Irrational'],
+        label='What do you think the intent of the other player was in their decisions?',
         widget=widgets.RadioSelect)
 
     identity = models.StringField(
-        choices=['会','不会','可能会'],
-        label='假如你知道另一位参与者是谁，你的选择会不一样吗？',
+        choices=['Yes','No','Maybe'],
+        label='If you knew the identity of the other player, would you have made a different decision?',
         widget=widgets.RadioSelect)
 
     risk = models.StringField(
-        choices=['0 完全不愿冒险','1','2','3','4','5','6','7','8','9','10 完全愿意冒险'],
-        label='你如何评价你自己：你更倾向于冒险还是避免风险？请使用下面度量来回答这个问题。0代表“完全不愿冒险”，10代表“完全愿意冒险”。',        
+        choices=['0 risk averse','1','2','3','4','5','6','7','8','9','10 fully prepared to take risks'],
+        label='How do you rate yourself personally? In general, are you someone who is ready to take risks or do you try to avoid risks? \n Please provide your answers using the scale provided again. 0 means “Not prepared to take risks at all”. 10 means “Prepared to take risks”. You can use the in-between ratings to tailor your response.',        
         widget=widgets.RadioSelect)

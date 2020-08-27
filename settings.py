@@ -16,7 +16,7 @@ SESSION_CONFIGS = [
         'name': 'bret',
         'display_name': 'Regulation Experiment',
         'num_demo_participants': 1,
-        'app_sequence': ['bret','ball_catch'],
+        'app_sequence': ['bret','ball_catch','survey'],
     }
 ]
 
