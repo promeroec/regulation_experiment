@@ -1,0 +1,68 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    模拟回合：你的信息
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'global/matrix.css' %}" />
+
+    <style>
+        .highlight-row-on-hover:hover td {
+            background-color: #fcf8e3;
+        }
+
+    </style>
+
+{% endblock %}
+
+{% block content %}
+        {% if player.pNum == 1 %}
+
+            <img src="{% static 'control/control2-graph-P1.png' %}" class="center" width="80%" height="80%" />
+
+        {% else %}
+
+            <img src="{% static 'control/control2-graph-P2.png' %}" class="center" width="80%" height="80%" />
+
+        {% endif %}
+
+<br />
+<div class="form-group required">
+    {% if player.pNum == 1 %}
+    <h2> 你的角色是第一人，与你玩游戏的是电脑。</h2>
+    <p>
+        {% if player.send_answer != None %} {%if player.send_answer != 'ask' %} 第二人回复的信息是：“我选择
+            {% if player.send_answer == 'R' %}
+                <img src="{% static 'control/right.png' %}" width="10%" height="10%"/>
+            {% else %}
+                <img src="{% static 'control/left.png' %}" width="10%" height="10%"/>
+            {% endif %}
+        ". {% endif %} {% endif %}<br>
+    </p>
+    <p> 你想向第二人发送哪一条信息？<br>这不是你的最终决定，你可以稍后更改你的选择。 </p>
+        {{ form.send_message.0 }} <img src="{% static 'control/left.png' %}" width="10%" height="10%"/> <br> <br>
+        {{ form.send_message.1 }} <img src="{% static 'control/right.png' %}" width="10%" height="10%"/> <br>
+        {{ form.send_message.errors}}
+    {% else %}
+    <h2> 你的角色是第二人，与你玩游戏的是电脑。</h2>
+    <p>
+        {% if player.send_message != None %} {% if player.send_message != 'ask' %} 第一人的信息是： “我选择
+            {% if player.send_message == 'R' %}
+                <img src="{% static 'control/right.png' %}" width="10%" height="10%"/>
+            {% else %}
+                <img src="{% static 'control/left.png' %}" width="10%" height="10%"/>
+            {% endif %}
+        ". {% endif %} {% endif %}<br>
+    </p>
+    <p> 你想向第二人发送哪一条信息？<br>这不是你的最终决定： </p>
+        {{ form.send_answer.0 }} <img src="{% static 'control/left.png' %}" width="10%" height="10%"/> <br> <br>
+        {{ form.send_answer.1 }} <img src="{% static 'control/right.png' %}" width="10%" height="10%"/> <br>
+        {{ form.send_answer.errors}}
+    {% endif %}
+</div>
+
+{% next_button %}
+
+{% endblock %}

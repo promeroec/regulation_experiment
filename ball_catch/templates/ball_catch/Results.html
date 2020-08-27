@@ -1,0 +1,43 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+    <table class="table">
+        <tr>
+            <td>Game</td>
+            <td>{{ game_num }}</td>
+        </tr>
+        <tr>
+            <td>Round</td>
+            <td>{{ round_num }}</td>
+        </tr>
+        <tr>
+            <td>Catches</td>
+            <td>{{ player.catches }}</td>
+        </tr>
+        <tr>
+            <td>Clicks</td>
+            <td>{{ player.clicks }}</td>
+        </tr>
+        <tr>
+            <td>Score</td>
+            <td>{{ player.score }}</td>
+        </tr>
+        <tr>
+            <td>Expense</td>
+            <td>{{ player.expense }}</td>
+        </tr>
+        <tr>
+            <td>Earnings in this round</td>
+            <td>{{ player.payoff }}</td>
+        </tr>
+    </table>
+
+    {% next_button %}
+{% endblock %}
+
+

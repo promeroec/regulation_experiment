@@ -1,0 +1,44 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    正式回合：你的选择
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'global/matrix.css' %}" />
+
+    <style>
+        .highlight-row-on-hover:hover td {
+            background-color: #fcf8e3;
+        }
+    </style>
+
+{% endblock %}
+
+{% block content %}
+
+<img src="{% static "control/control-graph.png" %}" class="center" width="80%" height="80%" />
+<br />
+<div class="form-group required">
+    {% if player.id_in_group == 1 %}
+    <h2> 你的角色是第一人，与你玩游戏的是另一位参与者。</h2>
+    <p>
+        第二人回复的信息是：“我选择 {{group.send_answer}}"。<br>
+        请问你的最终决定是什么？
+    </p>
+    {% formfield player.decision label="我的决定是：" %}
+    {% else %}
+    <h2> 你的角色是第二人，与你玩游戏的是另一位参与者。</h2>
+    <p>
+        第一人发送的信息是：“我选择 {{group.send_message}}"。<br>
+        第一人的最终决定是：“选项{{player.other_player.decision}}”。<br>
+        请问你的最终决定是什么？
+    </p>
+    {% formfield player.decision label="你的决定是:" %}
+    {% endif %}
+</div>
+
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    结果
+{% endblock %}
+
+{% block content %}
+    <p>
+        你选择 <strong>{{player.gamble_number}}</strong> ，结局为 <strong>{{player.event}}</strong>
+        根据你的选择，你赢得了<strong>{{ player.gain }}</strong>的报酬。你从这次实验中获得的总报酬为<strong>{{ participant.payoff_plus_participation_fee }}</strong>。
+        
+    </p>
+
+    {% next_button %}
+
+{% endblock %}

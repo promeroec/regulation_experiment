@@ -1,0 +1,128 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    赌博选择
+{% endblock %}
+{% block styles %}
+<style>
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+        .centerT {
+            margin: auto;
+            width: 90%;
+            border: 3px solid #73AD21;
+            text-align: center;
+        }
+        table#t01 {
+            width: 100%;
+        }
+        table#t01 td, th {
+            border: 1px solid #000000;
+            padding: 10px;
+            border-collapse: collapse;
+        }
+        table#t01 tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+</style>
+{% endblock %}
+{% block content %}
+<div class="card bg-light instructions">
+    <div class="card-body">
+
+    <h3>
+        说明
+    </h3>
+
+    <p>
+        在这个部分，你将从以下五种不同的赌局中选择一个。每一个赌局有两种可
+        能的结局（结局A或结局B），每种结局的概率如下表所示。你的报酬将由
+        以下两个因素决定：1）你所选择的赌局；2）该赌局中哪个结局出现。
+
+        比如：如果你选择了赌局4，并且出现了结局A，那么你将赢得40个点数；
+        如果出现了结局B，那么你将赢得4个点数。我们将根据您获得的点数，
+        以10点兑换5元的比率，计算您的最终报酬。
+
+    </p>
+        <div class="centerT"><table id="t01">
+            <tr>
+                <th>赌局</th>
+                <th>结局</th>
+                <th>报酬</th>
+                <th>可能性</th>
+                <th>你的选择</th>
+            </tr>
+            <tr>
+                <td rowspan="2" bgcolor="#E2E2E2">1</td>
+                <td>A</td>
+                <td>16</td>
+                <td>50%</td>
+                <td rowspan="2" bgcolor="white">{{ form.gamble_number.0 }}</td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td>16</td>
+                <td>50%</td>
+            </tr>
+            <tr>
+                <td rowspan="2" bgcolor="#E2E2E2">2</td>
+                <td>A</td>
+                <td>24</td>
+                <td>50%</td>
+                <td rowspan="2" bgcolor="white">{{ form.gamble_number.1 }}</td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td>12</td>
+                <td>50%</td>
+            </tr>
+            <tr>
+                <td rowspan="2" bgcolor="#E2E2E2">3</td>
+                <td>A</td>
+                <td>32</td>
+                <td>50%</td>
+                <td rowspan="2" bgcolor="white">{{ form.gamble_number.2 }}</td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td>8</td>
+                <td>50%</td>
+            </tr>
+            <tr>
+                <td rowspan="2" bgcolor="#E2E2E2">4</td>
+                <td>A</td>
+                <td>40</td>
+                <td>50%</td>
+                <td rowspan="2" bgcolor="white">{{ form.gamble_number.3 }}</td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td>4</td>
+                <td>50%</td>
+            </tr>
+            <tr>
+                <td rowspan="2" bgcolor="#E2E2E2">5</td>
+                <td>A</td>
+                <td>48</td>
+                <td>50%</td>
+                <td rowspan="2" bgcolor="white">{{ form.gamble_number.4 }}</td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td>0</td>
+                <td>50%</td>
+            </tr>
+        </table>
+    {{ form.gamble_number.errors }}
+</div>
+</div>
+</div>
+    <div align="center">{% next_button %}</div>
+
+{% endblock %}

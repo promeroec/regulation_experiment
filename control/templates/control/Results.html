@@ -1,0 +1,24 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    结果
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        {% if same_choice %}
+            Both of you chose (chinese) {{ my_decision }}.
+        {% else %}
+            你选择 {{ my_decision }} 另一位参与者选择了 {{ opponent_decision }}。
+        {% endif %}
+    </p>
+
+    <p>
+        根据你们的选择，你赢得了<strong>{{ player.payoff }}</strong>个点数的额外报酬。加上你参与的报酬，你从这
+        次实验中获得的总报酬为<strong>{{ participant.payoff_plus_participation_fee }}</strong>。
+    </p>
+    {% next_button %}
+
+{% endblock %}

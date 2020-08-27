@@ -1,0 +1,62 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    实验说明
+{% endblock %}
+
+{% block content %}
+    {% if player.id_in_group == 1 %}
+
+    <p>
+        你的实验角色被随机确定为<strong>第一人</strong>。实验中你会看到和下面类似的图例，
+        它将帮助你了解不同决策情况下你和另一参与者所获得的额外报酬。你和
+        另一参与者可以在彼此做决策前互相发送信息。这些信息将只能以如下形
+        式出现：“我选择#”或“我选择@”；或者你可以要求对方告知其选择的哪一侧，
+        因为你和对方看到图例中的符号是不一样的。
+    </p>
+    <img src="{% static "control/control2-graph-P1.png" %}" class="center" width="80%" height="80%" />
+
+    <p>
+        当你在图例一中选择<strong>#</strong>，将会有如下两种可能的结果：
+        <ol>
+            <li>如果第二人选择其图例中左边的符号（你不知道具体是什么），你们两者都将获得<strong>10个点数</strong>；</li>
+            <li>如果第二人选择其图例中右边的符号（你不知道具体是什么），你将获得<strong>70个点数</strong>而第二人将获得<strong>20个点数</strong>。</li>
+        </ol>
+        当你在图例一中选择 @，将会有如下两种可能的结果：
+        <ol>
+            <li>如果第二人选择其图例中左边的符号（你不知道具体是什么），你将获得<strong>20个点数</strong>而第二人将获得<strong>70个点数</strong>；</li>
+            <li>如果第二人选择其图例中右边的符号（你不知道具体是什么），你们两者都将获得<strong>40个点数</strong>。</li>
+        </ol>
+    </p>
+
+    {% else %}
+
+    <p>
+        你的实验角色被随机确定为<strong>第二人</strong>。实验中你会看到和下面类似的图例，
+        它将帮助你了解不同决策情况下你和另一参与者所获得的额外报酬。你和
+        另一参与者可以在彼此做决策前互相发送信息。这些信息将只能以如下形式出现
+        ：<strong>“我选择 &amp;”,</strong> <strong>“我选择*,”</strong>；或者你可以要求对方告知其选择的符号，你和
+        对方看到图例中的符号是不一样的。
+        
+    </p>
+    <img src="{% static "control/control2-graph-P2.png" %}" class="center" width="80%" height="80%" />
+
+    <p>
+        当第一人选择其图例中左边的符号（你不知道具体是什么），将会有如下的结果：
+        <ol>
+            <li>如果你选择 &amp;, 你们两者都将获得<strong>10个点数</strong> </li>
+            <li>如果你选择 *, 你将获得<strong>20个点数</strong>而第一人将获得<strong>70个点数</strong>。</li>
+        </ol>
+        当第一人选择其图例中右边的符号（你不知道具体是什么），将会有如下的结果：   
+        <ol>
+            <li>如果你选择 &amp;, 你将获得<strong>70个点数</strong>而第一人将获得<strong>20个点数</strong>；</li>
+            <li>如果你选择 *, 你们两者都将获得<strong>40个点数</strong>。</li>
+        </ol>
+    </p>
+
+    {% endif %}
+
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    测试
+{% endblock %}
+
+{% block content %}
+    {% if player.id_in_group == 1 %}
+
+    <img src="{% static "control/control2-graph-P1.png" %}" class="center" width="80%" height="80%" />
+
+  <p>
+    为了确认你理解了实验说明的内容，请首先回答以下两个测试问题。
+  </p>
+
+    {% formfields %}
+
+    {% else %}
+
+    <img src="{% static "control/control2-graph-P2.png" %}" class="center" width="80%" height="80%" />
+
+    <p>
+      为了确认你理解了实验说明的内容，请首先回答以下两个测试问题。
+    {% formfields %}
+
+    {% endif %}
+
+    {% next_button %}
+
+{% endblock %}

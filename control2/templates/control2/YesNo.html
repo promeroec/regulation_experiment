@@ -1,0 +1,39 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    你的信息
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'global/matrix.css' %}" />
+
+    <style>
+        .highlight-row-on-hover:hover td {
+            background-color: #fcf8e3;
+        }
+
+    </style>
+
+{% endblock %}
+
+{% block content %}
+        {% if player.id_in_group == 1 %}
+
+            <img src="{% static 'control/control2-graph-P1.png' %}" class="center" width="80%" height="80%" />
+            <h3>你的角色是第一人，与你玩游戏的是另一位参与者。</h3>    
+
+        {% else %}
+
+            <img src="{% static 'control/control2-graph-P2.png' %}" class="center" width="80%" height="80%" />
+            <h3>你的角色是第二人，与你玩游戏的是另一位参与者。</h3>
+        {% endif %}
+<br />
+<div class="form-group required">
+    <p>另一位参与者要求你披露你将要选择哪一边的选项。<br> 你可以选择“同意”，这不需要消耗点数；或者你可以选择“不同意”从而隐藏你的决定，但需要消耗<strong> 5 个点数</strong></p>
+    {% formfield group.ask_answer %}
+</div>
+
+    {% next_button %}
+
+{% endblock %}

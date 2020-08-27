@@ -1,0 +1,51 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    你的信息
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'global/matrix.css' %}" />
+
+    <style>
+        .highlight-row-on-hover:hover td {
+            background-color: #fcf8e3;
+        }
+
+    </style>
+
+{% endblock %}
+
+{% block content %}
+        {% if player.id_in_group == 1 %}
+
+            <img src="{% static 'control/control2-graph-P1.png' %}" class="center" width="80%" height="80%" />
+
+        {% else %}
+
+            <img src="{% static 'control/control2-graph-P2.png' %}" class="center" width="80%" height="80%" />
+
+        {% endif %}
+
+<br />
+<div class="form-group required">
+    {% if player.id_in_group == 1 %}
+    <h2> 你的角色是第一人，与你玩游戏的是另一位参与者。</h2>
+    <p>
+        {% if group.send_answer != None %} {%if group.send_answer != 'ask' %} 第二人回复的信息是：“我选择 {{group.get_send_answer_display}}". {% endif %} {% endif %}<br>
+    </p>
+    {% formfield group.send_message label="你想向第二人发送哪一条信息？<br>这不是你的最终决定，你可以稍后更改你的选择。" %}
+    {% else %}
+    
+    <h2> 你的角色是第二，与你玩游戏的是另一位参与者。</h2>
+    <p>
+        {% if group.send_message != None %} {% if group.send_message != 'ask' %} 第一人回复的信息是：“我选择 {{group.get_send_message_display}}". {% endif %} {% endif %}<br>
+    </p>
+    {% formfield group.send_answer label="你想向第二人发送哪一条信息？<br>这不是你的最终决定，你可以稍后更改你的选择。" %}
+    {% endif %}
+        {% next_button %}
+</div>
+
+
+{% endblock %}

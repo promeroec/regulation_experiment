@@ -1,0 +1,73 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    实验说明
+{% endblock %}
+
+{% block content %}
+    {% if player.id_in_group == 1 %}
+
+    <p>
+        你的实验角色被随机确定为<strong>第一人</strong>。实验中你会看到和下面类似的图例，
+        它将帮助你了解不同决策情况下你和另一参与者所获得的额外报酬。你和
+        另一参与者可以在彼此做决策前互相发送信息。这些信息将只能以如下形式出现：
+        <strong>"我选择A"</strong>或<strong>"我选择B"</strong>。
+    </p>
+
+    <img src="{% static "control/control-graph.png" %}" class="center" width="80%" height="80%" />
+    <p>
+        作为第一人，你将首先获得<strong>A</strong>和<strong>B</strong>两个选项，如图例最上层所示。你需要
+        将<strong>"我选择A"</strong>或<strong>"我选择B"</strong>的信息发送给第二人；对方接收到信息后，也
+        必须以<strong>"我选择A"</strong>或<strong>"我选择B"</strong>的形式发送一条信息给你。双方只能发送一次
+        信息。收到第二人的信息后，你可以改变你的选择，对方也可以改变。你将会在第
+        二人做出选择前首先做出选择，对方将会在知悉你的选择后进行选择，而你将
+        不会获知对方的选择。以上信息你们两者都知道。
+    </p>
+
+    <p>
+        当你在图例一中选择<strong>A</strong> ，将会有如下两种可能的结果：
+        <ol>
+            <li>如果第二人也选择A，你们两者都将获得<strong>10个点数</strong>；</li>
+            <li>如果第二人选择B，你将获得<strong>70个点数</strong>而第二人将获得<strong>20个点数</strong>。</li>
+        </ol>
+        当你在图例一中选择<strong>B</strong>，将会有如下两种可能的结果：   
+        <ol>
+            <li>如果第二人选择A，你将获得<strong>20个点数</strong>而第二人将获得<strong>70个点数</strong>；</li>
+            <li>如果第二人也选择B，你们两者都将获得<strong>40个点数</strong>。</li>
+        </ol>
+    </p>
+
+    {% else %}
+
+    <p>
+        你的实验角色被随机确定为第二人。实验中你会看到和下面类似的图例，它将帮助你了解不
+        同决策情况下你和另一参与者所获得的额外报酬。你和另一参与者可以在彼此做决策前互相发
+        送信息。这些信息将只能以如下形式出现：<strong>"我选择A"</strong>或<strong>"我选择B"</strong>。
+    </p>
+
+    <img src="{% static "control/control-graph.png" %}" class="center" width="80%" height="80%" />
+    <p>
+        作为第二人，你将在第一人之后做出选择。第一人首先会将<strong>"我选择A"</strong>或<strong>"我选择B"</strong>
+        的信息发送给你；你接手到信息后，需要以<strong>"我选择A"</strong>或<strong>"我选择B"</strong>的形式回复一条信
+        息给对方。双方只能发送一次信息。发送完你的信息后，你可以改变你的选择，对方也
+        可以改变。第一人会在不知晓你的选择的情况下首先进行选择，而你将在知晓对方选择
+        的情况下进行选择。以上信息你们两者都知道。
+    <p>
+        当你在图例一中选择<strong>A</strong>，将会有如下两种可能的结果：
+        <ol>
+            <li>如果第一人也选择<strong>A</strong>，你们两者都将获得<strong>10个点数</strong>; </li>
+            <li>如果第一人选择<strong>B</strong>，你将获得<strong>20个点数</strong>而第一人将获得<strong>70个点数</strong>。</li>
+        </ol>
+        当你在图例一中选择<strong>B</strong>，将会有如下两种可能的结果：   
+        <ol>
+            <li>如果第一人选择A，你将获得<strong>70个点数</strong>而第一人将获得<strong>20个点数</strong>；</li>
+            <li>如果第一人也选择B，你们两者都将获得<strong>40个点数</strong>。</li>
+        </ol>
+    </p>
+
+    {% endif %}
+
+    {% next_button %}
+
+{% endblock %}

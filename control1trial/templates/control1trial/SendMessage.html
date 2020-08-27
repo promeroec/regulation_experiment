@@ -1,0 +1,49 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+模拟回合：你的选择
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'global/matrix.css' %}" />
+
+    <style>
+        .highlight-row-on-hover:hover td {
+            background-color: #fcf8e3;
+        }
+
+    </style>
+
+{% endblock %}
+
+{% block content %}
+
+<img src="{% static "control/control-graph.png" %}" class="center" width="80%" height="80%" />
+<br />
+<div class="form-group required">
+    {% if player.id_in_group == 1 %}
+
+    <h2> 你的角色是第一人，与你玩游戏的是电脑。</h2>
+    <p>
+        你想向第二人发送哪一条信息？<br>
+        这不是你的最终决定，你可以稍后更改你的选择。
+    </p>
+    {% formfield player.send_message label = "" %}
+
+        {% else %}
+
+    <h2> 你的角色是第二人，与你玩游戏的是电脑。</h2>
+    <p>
+        第一人发送的信息是：“{{player.get_send_message_display}}”。 <br>
+        你想向第一人发送哪一条信息？<br>
+        这不是你的最终决定，你可以稍后更改你的选择。
+    </p>
+    {% formfield player.send_answer label = "" %}
+
+        {% endif %}
+</div>
+
+    {% next_button %}
+
+{% endblock %}

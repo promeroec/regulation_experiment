@@ -1,0 +1,18 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    背景信息调查
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        请回答以下问题。
+    </p>
+
+    {% formfields %}
+
+    {% next_button %}
+
+{% endblock %}
