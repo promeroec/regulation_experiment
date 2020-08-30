@@ -1,0 +1,62 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree %}
+{% load i18n %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** STYLES *** #}
+{# ****************************************************************************************************************** #}
+{% block styles %}
+    <link href="{% static 'bret/css/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** TITLE *** #}
+{# ****************************************************************************************************************** #}
+{% block title %}
+    {% trans "Bievenido a este experimento en la USFQ" %}
+{% endblock %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** CONTENT *** #}
+{# ****************************************************************************************************************** #}
+{% block content %}
+
+    <div class="instructions">
+        <p>
+            {% blocktrans trimmed %}
+                Su participación en este experimento es voluntaria y puede elegir no seguir participando en cualquier momento. Pero
+                recuerde que si desea irse no podrá regresar al experimento y recibirá solamente solamente el pago inicial (2.00)
+            {% endblocktrans %}
+        </p>
+        <p>
+            {% blocktrans trimmed %}
+                Por favor apague y guarde su telefono celular. Por favor, no hable con otros participantes. Si durante el experimento
+                usted tiene una pregunta, levate la mano y uno de los asistentes le ayudará
+            
+            {% endblocktrans %}
+        </p>
+        <p>
+            {% blocktrans trimmed %}
+                En este experimento, usted ganará dinero dependiendo de sus decisiones en varias actividades
+            {% endblocktrans %}
+        </p>
+        <p>
+            {% blocktrans trimmed %}
+                Los pagos durante el experimento se realizarán en términos de dólares experimentales. Al final del experimento estos
+                dolares experimentales se transformarán en dólares de acuerdo a la tasa que se indicará. Cuando este listo, por favor presione
+                Next para pasar a las instrucciones
+            {% endblocktrans %}
+        </p>
+        <p>
+            {% blocktrans trimmed %}
+                <strong>Una vez que presione "Next" o podrá regresar a las pantallas previas 
+            {% endblocktrans %}
+        </p>
+
+    </div>
+
+     {% next_button %}
+{% endblock %}

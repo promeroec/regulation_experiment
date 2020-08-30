@@ -6,6 +6,15 @@ from . import models
 from ._builtin import Page, WaitPage
 from .models import Constants
 
+# ******************************************************************************************************************** #
+# *** CLASS INTRODUCTION *** #
+# ******************************************************************************************************************** #
+class Introduction(Page):
+
+    # only display instruction in round 1
+    def is_displayed(self):
+        return self.subsession.round_number == 1
+
 
 # ******************************************************************************************************************** #
 # *** CLASS INSTRUCTIONS *** #
@@ -105,10 +114,10 @@ class Results(Page):
 # ******************************************************************************************************************** #
 # *** PAGE SEQUENCE *** #
 # ******************************************************************************************************************** #
-page_sequence = [Decision]
+page_sequence = [Introduction, Decision]
 
 if Constants.instructions:
-    page_sequence.insert(0,Instructions)
+    page_sequence.insert(1,Instructions)
 
 if Constants.results:
     page_sequence.append(Results)

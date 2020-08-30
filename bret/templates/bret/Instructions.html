@@ -27,37 +27,40 @@
     <div class="instructions">
         <p>
             {% blocktrans trimmed %}
-                In the following, you will see a {{ num_rows }}x{{ num_cols }}-matrix containing
-                {{ num_boxes }} boxes on your screen.
+                A continuación, usted podrá observar una matriz de {{ num_rows }}x{{ num_cols }} que contiene
+                {{ num_boxes }} cajas en su pantalla.
             {% endblocktrans %}
         </p>
         <p>
             {% blocktrans trimmed %}
-                As soon as you start the task by hitting the 'Start' button,
-                one of the boxes is collected per second, starting from the top-left corner.
-                Once collected, the box marked by a tick symbol.
-                For each box collected you earn {{ box_value }}.
+                Ta pronto como usted empiece la tarea, oprimiendo el botón de "Iniciar",
+                una de estas cajas será recolectada en cada segundo, empezado por el de la esquina superior-izquiera
+                Una vez recolectada, la caja se marcará con un visto.
+                Por cada caja recolectada, usted recibirá {{ box_value }}.
             {% endblocktrans %}
         </p>
         <p>
             {% blocktrans trimmed %}
+                Detrás de una sola de estas cajas está escondida una bombas que destruirá todo lo recolectado.
                 Behind one of the boxes hides a bomb that destroys everything that has been collected.
-                The remaining {{ num_nobomb }} boxes are worth {{ box_value }} each.
-                You do not know where the bomb is located.
-                You only know that the bomb can be in any place with equal probability.
+                Las {{ num_nobomb }} cajas restates tienen el mismo valor {{ box_value }} cada una.
+                Usted no sabe donde estará ubicada la bomba.
+                Lo único que usted sabe es que la bomba puede estar en cualquiera de las ubicaciones con la misma
+                probabilidad
             {% endblocktrans %}
         </p>
         <p>
             {% blocktrans trimmed %}
-                Your task is to choose when to stop the collecting process. You do so by hitting 'Stop' at any time.
-                If you collect the box where the bomb is located, the bomb will explode and you will earn zero.
-                If you stop before collecting the bomb, you gain the amount accumulated that far.
+                Su tarea, es escoger cuando detener el proceso de recolección. Usted detiene el proceso aplastado el
+                botón "Parar" en cualquier momento. 
+                Si usted recoje la caja donde esta localizada la bomba, la misma explotará haciendo que usted no genere ingreso
+                Si usted detiene la recolección antes de llegar a la bomba, usted gana lo acumulado hasta ese momento
             {% endblocktrans %}
         </p>
         <p>
             {% blocktrans trimmed %}
-                At the end of the task boxes are toggled by hitting the 'Solve' button.
-                A dollar sign or a fire symbol (for the bomb) will be shown on each of your collected boxes.
+                Al final del proceso de recolección de las cajas, la respuesta será revelada oprimiendo el botón "Resolver".
+                Un símbolo de dolar o un símbolo de fuego aparecerá en cada una de las cajas recolectadas
             {% endblocktrans %}
         </p>
 

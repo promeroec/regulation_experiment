@@ -59,7 +59,7 @@
 {# *** TITLE *** #}
 {# ****************************************************************************************************************** #}
 {% block title %}
-    {% trans "Your Decision" %}
+    {% trans "Su decisión" %}
 {% endblock %}
 
 
@@ -124,12 +124,12 @@
 
                         <div data-ng-if="!bombTaskController.input">
                             <strong>
-                                {% trans "No. of boxes collected:" %}
+                                {% trans "No. de cajas recolectadas:" %}
                             </strong>
                             <span data-ng-bind="bombTaskController.getCollectedBoxes()"></span>
                             <br>
                             <strong>
-                                {% trans "No. of boxes remaining:" %}
+                                {% trans "No. de cajas pendientes:" %}
                             </strong>
                             <span data-ng-bind="bombTaskController.getRemainingBoxes()"></span>
                         </div>
@@ -160,7 +160,7 @@
                                 data-ng-click="bombTaskController.start()"
                                 data-ng-disabled="bombTaskController.started">
                                 <span>
-                                    {% trans "Start" %}
+                                    {% trans "Iniciar" %}
                                 </span>
                             </button>
 
@@ -171,7 +171,7 @@
                                 data-ng-click="bombTaskController.stop()"
                                 data-ng-disabled="!bombTaskController.getCollectedBoxes() || !bombTaskController.started || bombTaskController.stopped">
                                 <span>
-                                    {% trans "Stop" %}
+                                    {% trans "Parar" %}
                                 </span>
                             </button>
 
@@ -183,7 +183,7 @@
                                 data-ng-click="bombTaskController.resolve()"
                                 data-ng-disabled="!bombTaskController.stopped">
                                 <span>
-                                    {% trans "Solve" %}
+                                    {% trans "Resolver" %}
                                 </span>
                             </button>
                         </div>

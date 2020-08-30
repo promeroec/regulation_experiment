@@ -15,7 +15,7 @@ Ball-Catching Task
 class Constants(BaseConstants):
     name_in_url = 'ball_catch'
     players_per_group = None
-    num_rounds = 20
+    num_rounds = 1
 
 class Subsession(BaseSubsession):
 

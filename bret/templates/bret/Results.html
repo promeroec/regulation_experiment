@@ -15,7 +15,7 @@
 {# *** TITLE *** #}
 {# ****************************************************************************************************************** #}
 {% block title %}
-    {% trans "Results" %}
+    {% trans "Resultados" %}
 {% endblock %}
 
 
@@ -30,25 +30,25 @@
     {% if Constants.num_rounds == 1 %}
         <div class="card card-info">
             {% blocktrans trimmed %}
-                You chose to collect {{ boxes_collected }} out of {{ boxes_total }} boxes.
+                Usted escogio recolectar {{ boxes_collected }} de un total de {{ boxes_total }} cajas.
             {% endblocktrans %}
 
             <br/>
             {% blocktrans trimmed %}
-                The bomb was hidden behind the box in row {{ bomb_row }}, column {{ bomb_col }}.
+                La bomba estuvo oculta detrás de la fila {{ bomb_row }}, columna {{ bomb_col }}.
             {% endblocktrans %}
 
             <br/><br/>
             {% if bomb %}
                 {% blocktrans trimmed %}
-                    The bomb was among your {{ boxes_collected }} collected boxes.<br/>
-                    Accordingly, all your earnings in this task were destroyed and your payoff amounts to {{ payoff }}.
+                    La bomba estaba entre tus {{ boxes_collected }} cajas recolectadas.<br/>
+                    Con lo que, todas tus ganancias fueron detruidas obteniendo u pago final de {{ payoff }}.
                 {% endblocktrans %}
             {% else %}
                 {% blocktrans trimmed %}
-                    Your collected boxes did not contain the bomb.<br/>
-                    Thus, you receive {{ box_value }} for each of the {{ boxes_collected }} boxes
-                    you collected such that your payoff from this task amounts to <b>{{ payoff }}</b>.
+                    Las cajas que recolectaste no contenían la bomba<br/>
+                    Por lo que, usted recibirá {{ box_value }} por cada una de las {{ boxes_collected }} cajas
+                    que recolectó de tal forma que el pago resultante al final es <b>{{ payoff }}</b>
                 {% endblocktrans %}
             {% endif %}
         </div>
