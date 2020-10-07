@@ -17,8 +17,32 @@ SESSION_CONFIGS = [
         'display_name': 'Regulation Experiment',
         'num_demo_participants': 1,
         'app_sequence': ['bret','ball_catch','survey'],
+    },
+    {
+         'name': 'realefforttask2',
+         'display_name': 'Real Effort Task - sum of N numbers',
+         'num_demo_participants': 1,
+         'app_sequence': ['realefforttask'],
+         'task': 'SumNumbers',
+         'task_params': {'num_digits': 4,
+                         'digits_range': [50, 99]},
+    },
+    {
+        'name': 'realefforttask4',
+        'display_name': 'Real Effort Task - Decoding',
+        'num_demo_participants': 1,
+        'app_sequence': ['realefforttask'],
+        'task': 'Decoding',
+        'task_params': {'dict_length': 10, 'task_len': 5},
+    },
+    {
+        'name': 'sliders_task',
+        'display_name': 'Sliders Task',
+        'num_demo_participants': 1,
+        'app_sequence': ['sliders_task'],
     }
 ]
+
 
 
 # ISO-639 code
