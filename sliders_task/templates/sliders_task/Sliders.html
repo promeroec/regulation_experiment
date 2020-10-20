@@ -2,40 +2,44 @@
 {% load otree static %}
 
 {% block title %}
-    <strong> Page {{ subsession.round_number }} of {{ Constants.num_rounds }} </strong> - Slider Task
+    <strong> Pagina {{ subsession.round_number }} de {{ Constants.num_rounds }} </strong> - Deslizador
 {% endblock %}
 
 {% block content %}
-    <p> This is a slider task game.  You will be given a number and a slider.  Use your mouse to click and drag the slider to match the given number.  Move on to the next slider.  There are 10 sliders on each page, and you have 2 minutes to complete as many sliders and as many pages as possible.  You will be rewarded for each correct slider you complete within the time limit.</p>
+        <p> Esta es la tarea del deslizador.  Usted recibirá un número y un slider.
+            Use su mouse para hacer click y desplazar el deslizador a conveniencia.
+            En total, existen un total de de 10 deslizadores en cada página. Usted tiene
+            2 minutos para completar tantos deslizadores como le sea posible.
+            Usted será recompensado por cada deslizador completo dentro del tiempo límite</p>
 
-        Set slider to {{ slider_goals_this_round.0 }}
+        Fijar el deslizador {{ slider_goals_this_round.0 }}
         {% formfield player.slider1 %}
 
-        Set slider to {{ slider_goals_this_round.1 }}
+        Fijar el deslizador {{ slider_goals_this_round.1 }}
         {% formfield player.slider2 %}
 
-        Set slider to {{ slider_goals_this_round.2 }}
+        Fijar el deslizador {{ slider_goals_this_round.2 }}
         {% formfield player.slider3 %}
 
-        Set slider to {{ slider_goals_this_round.3 }}
+        Fijar el deslizador {{ slider_goals_this_round.3 }}
         {% formfield player.slider4 %}
 
-        Set slider to {{ slider_goals_this_round.4 }}
+        Fijar el deslizador {{ slider_goals_this_round.4 }}
         {% formfield player.slider5 %}
 
-        Set slider to {{ slider_goals_this_round.5 }}
+        Fijar el deslizador {{ slider_goals_this_round.5 }}
         {% formfield player.slider6 %}
 
-        Set slider to {{ slider_goals_this_round.6 }}
+        Fijar el deslizador {{ slider_goals_this_round.6 }}
         {% formfield player.slider7 %}
 
-        Set slider to {{ slider_goals_this_round.7 }}
+        Fijar el deslizador {{ slider_goals_this_round.7 }}
         {% formfield player.slider8 %}
 
-        Set slider to {{ slider_goals_this_round.8 }}
+        Fijar el deslizador {{ slider_goals_this_round.8 }}
         {% formfield player.slider9 %}
 
-        Set slider to {{ slider_goals_this_round.9 }}
+        Fijar el deslizador {{ slider_goals_this_round.9 }}
         {% formfield player.slider10 %}
 
 
