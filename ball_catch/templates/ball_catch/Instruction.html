@@ -2,7 +2,7 @@
 {% load otree static %}
 
 {% block title %}
-    Instructions
+    Instrucciones (Segunda Parte)
 {% endblock %}
 
 {% block styles %}
@@ -24,35 +24,33 @@
 
 {% block content %}
     <p>
-        <b>Welcome to the experiment.</b> You are about to participate in an experiment on decision making.
-        Throughout the experiment you must not communicate with other participants.
-        If you follow these instructions carefully, you could earn a considerable amount of money. </p>
-    <p>You will earn money by completing a task.
-        You will be asked to work on a computerized ball-catching task under 4 settings and each setting has 5 periods.
-        Each period lasts one minute. In each period, there will be a task box in the middle of your browser like the one shown below:</p>
+        <b>Segunda Parte</b> Ahora va a tener una segunda actividad.
+    </p>
 
-    <div id="inst_img">
+
+    <div style="width: 50%; margin: 0 auto;", id="inst_img">
         <img src="{% static "ball_catch/images/instruction.png" %}" width="600"/>
     </div>
 
-    <p>Once you click on the <b>“Start the Task!”</b> button,
-        the timer will start and balls will fall randomly from the top of the task box.
-        You can move the tray at the bottom of the task box to catch the balls
-        by using the mouse to click on the <b>LEFT</b> or <b>RIGHT</b> buttons. To catch a ball,
-        your tray must be below the ball before it touches the bottom of the tray.
-        When the ball touches the tray your catches increase by one.</p>
+    <p>
+    </p>
 
-    <p>You will receive a prize (in ECU) for each ball you catch.
-        In each period, the number of balls you caught so far (displayed as CATCHES),
-        and your accumulated prizes so far (SCORE) are shown right above the task box.
-        SCORE will be CATCH multiplied by your prize per catch for the period.
-        At the end of the period your earnings in ECU for the period will be your SCORE. </p>
+    <p> Una vez que haya hecho click en el botón de <b>“Comenzar la Prueba!”</b>,
+        el contador del tiempo empezará y unas bolas de color rojo caerán aleatoriamente desde
+        la parte superior de la caja, destinada para la actividad.
+        Usted puede mover la bandeja en el fondo de la caja para atrapar las bolas
+        usando el mouse para hacer click en los botónes de <b>IZQUIERDA</b> o <b>DERECHA</b>
+        Para atrapar una bola, la bandeja que usted controla deberá estár por debajo de la bola
+        antes de que esta haga contacto con el fondo de la bandeja.
+        Cada vez que la bola hace contacto con la bandeja, el contador de capturas aumentará en 1</p>
 
-    <p>At the end of the experiment, total 4 periods, 1 period for each setting,
-        will be randomly selected and the total score of the 4 periods will be converted to Euros
-        at the rate of <mark><b>400 ECU = 1 Euro</b></mark>. You will be paid this amount.</p>
+    <p> Usted recibirá un premio (en USD) por cada bola que atrape.
+        En cada ronda, el número total de bolas que capture hasta ese momento, así como
+        el total de premios acumulados hasta ese momento estarán desplegadas en la parte superior de
+        la caja donde se realiza la actividad. </p>
 
-    <p><strong>If you are ready, please click the "Next" button. Then the task will start.</strong></p>
+
+    <p><strong>Si esta listo, por favor presione "Next". Entonces la tarea empezará.</strong></p>
 
     {% next_button %}
 {% endblock %}

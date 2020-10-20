@@ -15,7 +15,7 @@ Ball-Catching Task
 class Constants(BaseConstants):
     name_in_url = 'ball_catch'
     players_per_group = None
-    num_rounds = 1
+    num_rounds = 5
 
 class Subsession(BaseSubsession):
 
@@ -23,7 +23,7 @@ class Subsession(BaseSubsession):
 
         for p in self.get_players():
             p.prize = 10
-            p.cost = 0
+            p.cost = 5
             # p.condition = p.participant.vars['my_prize_and_cost'][self.round_number - 1]
             # if p.condition <= 3:
             #     p.prize = 10
