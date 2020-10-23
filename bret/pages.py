@@ -1,13 +1,9 @@
-from __future__ import division
-
-from otree.common import Currency as c, currency_range, safe_json
-
-from . import models
+from otree.api import Currency as c, currency_range
 from ._builtin import Page, WaitPage
 from .models import Constants
 
 # ******************************************************************************************************************** #
-# *** CLASS INTRODUCTION *** #
+# *** CLASS INTRODUCTION *** # from __future__ import division # from otree.common import Currency as c, currency_range, safe_json # from . import models
 # ******************************************************************************************************************** #
 class Introduction(Page):
 
